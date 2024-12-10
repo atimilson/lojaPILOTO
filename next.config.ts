@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['images.tcdn.com.br', 'via.placeholder.com'], // Adicione os domínios permitidos aqui
+  },
 };
 
 export default nextConfig;

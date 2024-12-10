@@ -1,101 +1,137 @@
 import Image from "next/image";
 
+const featuredProducts = [
+  {
+    id: 1,
+    name: "Headset Gamer RGB Pro",
+    price: "R$ 299,90",
+    image: "https://images.tcdn.com.br/img/img_prod/1163648/cooler_para_processador_dex_rgb_intel_e_amd_dx_7001_snf_3343_1_f225e0b0830ba727793f7f0b058eab36.jpeg",
+    discount: "15% OFF"
+  },
+  {
+    id: 2,
+    name: "Mouse Gamer 16000 DPI",
+    price: "R$ 199,90",
+    image: "https://images.tcdn.com.br/img/img_prod/1163648/180_mouse_gamer_sem_fio_havit_ms969se_8000_dpi_6_botoes_wireless_bluetooth_e_usb_c_preto_snf_3161_1_34774a9c130fac982be78d999d617efe.jpeg",
+    discount: "10% OFF"
+  },
+  {
+    id: 3,
+    name: "Teclado Mecânico RGB",
+    price: "R$ 449,90",
+    image: "https://images.tcdn.com.br/img/img_prod/1163648/180_teclado_gamer_mecanico_t_dagger_battleship_rainbow_switch_blue_abnt_black_t_tgk301_bl_snf_3189_1_55b3e74e51caf0795bf32f49738df490.jpg",
+    tag: "NOVO"
+  },
+  {
+    id: 4,
+    name: "Monitor 4K Ultra HD",
+    price: "R$ 1.299,90",
+    image: "https://images.tcdn.com.br/img/img_prod/1163648/180_monitor_gamer_curvo_kbm_gaming_mg210_23_6_180hz_full_hd_1ms_displayport_e_hdmi_adaptive_sync_snf_3383_1_2fac55ebe5fb442b85103b703849b27e.jpg",
+    discount: "20% OFF"
+  }
+];
+
+const categories = [
+  { name: "Periféricos", icon: "🎮" },
+  { name: "Hardware", icon: "💻" },
+  { name: "Notebooks", icon: "💻" },
+  { name: "Monitores", icon: "🖥️" },
+];
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <div className="flex flex-col items-center text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Tech Store
+            </h1>
+            <p className="text-xl mb-8">
+              Os melhores produtos de tecnologia você encontra aqui
+            </p>
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition">
+              Ver Ofertas
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Categories */}
+      <div className="container mx-auto px-4 py-12">
+        <h2 className="text-2xl font-bold mb-8 text-gray-800">Categorias</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {categories.map((category) => (
+            <div key={category.name} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer text-center">
+              <div className="text-3xl mb-2">{category.icon}</div>
+              <h3 className="font-medium text-gray-800">{category.name}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Products */}
+      <div className="container mx-auto px-4 py-12">
+        <h2 className="text-2xl font-bold mb-8 text-gray-800">Produtos em Destaque</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredProducts.map((product) => (
+            <div key={product.id} className="bg-white rounded-lg shadow-sm hover:shadow-lg transition">
+              <div className="relative">
+                <div className="aspect-square relative">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover rounded-t-lg"
+                  />
+                </div>
+                {product.discount && (
+                  <span className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-medium">
+                    {product.discount}
+                  </span>
+                )}
+                {product.tag && (
+                  <span className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-sm font-medium">
+                    {product.tag}
+                  </span>
+                )}
+              </div>
+              <div className="p-4">
+                <h3 className="font-medium mb-2 text-gray-800">{product.name}</h3>
+                <p className="text-lg font-bold text-blue-600">{product.price}</p>
+                <button className="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Newsletter */}
+      <div className="bg-gray-100 py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">
+              Receba nossas ofertas
+            </h2>
+            <p className="mb-6 text-gray-600">
+              Cadastre-se para receber as melhores ofertas em primeira mão
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <input
+                type="email"
+                placeholder="Seu melhor e-mail"
+                className="px-4 py-2 rounded-lg flex-1 max-w-md border border-gray-300 text-gray-800"
+              />
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+                Cadastrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
